@@ -1,0 +1,22 @@
+
+<h1>
+    Diary
+  </h1>
+  <div class="container-fluid">
+    <div class="col-md-6">
+      <div *ngFor='let entry of entries;let i = index' id="entry">
+        <h3 appHighlight>{{entry.id}}  Title:{{entry.title}} <br><span id="format">Format: {{entry.type}}</span> </h3>
+        <button (click) = 'toggleContent(i)' class="btn btn-primary"> Show Content</button>
+        <div *ngIf='entry.showContent'>
+          <p>{{entry.content}}</p>
+          <p>{{entry.date|date}}</p>
+        </div>
+        <button (click)='deleteEntry(i)' class="btn btn-danger" id="delete">Delete this Entry</button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div>
+        <app-diary-form (addEntry)="addNewEntry($event)"></app-diary-form>
+      </div>
+    </div>
+  </div>
