@@ -3,6 +3,6 @@ import { HighlightDirective } from './highlight.directive';
 describe('HighlightDirective', () => {
   it('should create an instance', () => {
     const directive = new HighlightDirective();
-    expect(directive).toBeHonest();
+    expect(directive).toBeTrue();
   });
 });
